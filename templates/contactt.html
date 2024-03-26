@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f2f2f2;
             margin: 0;
             padding: 0;
         }
@@ -41,8 +41,8 @@
             resize: none;
         }
         input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
+            background-color: #4CAF50;
+            color: white;
             padding: 12px 20px;
             border: none;
             border-radius: 6px;
@@ -51,7 +51,7 @@
             transition: background-color 0.3s ease;
         }
         input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #45a049;
         }
         .form-group {
             margin-bottom: 20px;
@@ -74,36 +74,9 @@
             width: auto;
             margin-top: 10px;
         }
-
-        /* Menu style inspired by Apple */
-        .menu {
-            text-align: center;
-            margin: 20px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .menu a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 15px;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-        .menu a:hover {
-            color: #007bff;
-        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="menu">
-            <a href="#">Accueil</a>
-            <a href="#">À propos</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-        </div>
-    </header>
     <div class="container">
         <h2>Contactez-nous</h2>
         <form action="/submit_contact/" method="post">
