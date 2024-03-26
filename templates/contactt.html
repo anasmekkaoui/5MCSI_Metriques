@@ -7,29 +7,31 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
         }
         .container {
             max-width: 600px;
             margin: 50px auto;
-            padding: 20px;
+            padding: 30px;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
         h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            color: #333;
         }
         input[type="text"], textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 6px;
             box-sizing: border-box;
+            font-size: 16px;
         }
         textarea {
             height: 150px;
@@ -37,14 +39,35 @@
         input[type="submit"] {
             background-color: #4caf50;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease;
         }
         input[type="submit"]:hover {
             background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .form-group input[type="text"], .form-group textarea {
+            width: calc(100% - 24px);
+            display: block;
+            margin-top: 6px;
+        }
+        .form-group textarea {
+            resize: none;
+        }
+        .form-group input[type="submit"] {
+            width: auto;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -52,16 +75,29 @@
     <div class="container">
         <h2>Contactez-nous</h2>
         <form action="/submit_contact/" method="post">
-            <label for="fname">Prénom:</label>
-            <input type="text" id="fname" name="firstname" placeholder="Votre prénom.." required>
+            <div class="form-group">
+                <label for="fname">Prénom:</label>
+                <input type="text" id="fname" name="firstname" placeholder="Votre prénom.." required>
+            </div>
 
-            <label for="lname">Nom:</label>
-            <input type="text" id="lname" name="lastname" placeholder="Votre nom.." required>
+            <div class="form-group">
+                <label for="lname">Nom:</label>
+                <input type="text" id="lname" name="lastname" placeholder="Votre nom.." required>
+            </div>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Écrivez votre message ici.." required></textarea>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Votre adresse email.." required>
+            </div>
 
-            <input type="submit" value="Envoyer">
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Écrivez votre message ici.." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Envoyer">
+            </div>
         </form>
     </div>
 </body>
