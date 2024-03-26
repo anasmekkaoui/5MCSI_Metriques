@@ -74,6 +74,12 @@
             width: auto;
             margin-top: 10px;
         }
+        #map {
+            height: 300px;
+            width: 100%;
+            margin-top: 30px;
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
@@ -104,6 +110,27 @@
                 <input type="submit" value="Envoyer">
             </div>
         </form>
+        <div id="map"></div>
     </div>
+
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of ESIEE-IT Montigny-le-Bretonneux
+            var esieeit = { lat: 48.7817087, lng: 2.0429749 };
+            // The map, centered at ESIEE-IT Montigny-le-Bretonneux
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: esieeit,
+            });
+            // The marker, positioned at ESIEE-IT Montigny-le-Bretonneux
+            var marker = new google.maps.Marker({
+                position: esieeit,
+                map: map,
+            });
+        }
+    </script>
+    <!-- Replace YOUR_API_KEY with your actual Google Maps API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 </body>
 </html>
