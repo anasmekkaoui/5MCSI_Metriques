@@ -12,19 +12,37 @@
             padding: 0;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 50px auto;
             padding: 30px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
-        h2 {
+        h1, h2 {
             text-align: center;
-            margin-bottom: 30px;
             color: #333;
         }
-        input[type="text"], textarea {
+        .menu {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #555;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .menu a:hover {
+            color: #4caf50;
+        }
+        .form-container {
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+        }
+        input[type="text"], input[type="email"], textarea {
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
@@ -35,6 +53,7 @@
         }
         textarea {
             height: 150px;
+            resize: none;
         }
         input[type="submit"] {
             background-color: #4caf50;
@@ -49,56 +68,45 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            font-weight: bold;
+        .logo {
             display: block;
-            margin-bottom: 6px;
-        }
-        .form-group input[type="text"], .form-group textarea {
-            width: calc(100% - 24px);
-            display: block;
-            margin-top: 6px;
-        }
-        .form-group textarea {
-            resize: none;
-        }
-        .form-group input[type="submit"] {
-            width: auto;
-            margin-top: 10px;
+            margin: 0 auto;
+            width: 200px;
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="menu">
+            <a href="#">Accueil</a>
+            <a href="#">À propos</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        <img class="logo" src="https://via.placeholder.com/200" alt="Logo de l'entreprise">
+    </header>
     <div class="container">
         <h2>Contactez-nous</h2>
-        <form action="/submit_contact/" method="post">
-            <div class="form-group">
+        <div class="form-container">
+            <form action="/submit_contact/" method="post">
                 <label for="fname">Prénom:</label>
                 <input type="text" id="fname" name="firstname" placeholder="Votre prénom.." required>
-            </div>
 
-            <div class="form-group">
                 <label for="lname">Nom:</label>
                 <input type="text" id="lname" name="lastname" placeholder="Votre nom.." required>
-            </div>
 
-            <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Votre adresse email.." required>
-            </div>
 
-            <div class="form-group">
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" placeholder="Écrivez votre message ici.." required></textarea>
-            </div>
 
-            <div class="form-group">
                 <input type="submit" value="Envoyer">
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
+    <footer>
+        <p>&copy; 2024 Nom de l'entreprise. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
