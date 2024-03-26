@@ -10,6 +10,10 @@ app = Flask(__name__)
 @app.route("/contact/")
 def MaPremiereAPI():
     return "<h2>La page contact d'Anas Mekkaoui</h2>"
+
+@app.route("/contactt/")
+def MaPremiereAPI():
+     return render_template('contactt.html')
   
 @app.route('/')
 def hello_world():
