@@ -1,15 +1,19 @@
-from flask import Flask, rendertemplatestring, rendertemplate, jsonify
-from flask import rendertemplate
+from flask import Flask, render_template_string, render_template, jsonify
+from flask import render_template
 from flask import json
 from datetime import datetime
 from urllib.request import urlopen
 import sqlite3
-
-app = Flask(name)
+                                                                                                                                       
+app = Flask(__name__)                                                                                                                  
 
 @app.route("/contact/")
 def MaPremiereAPI():
-    return "<h2>Ma page de contact</h2>"
+    return "<h2>La page contact d'Anas Mekkaoui</h2>"
+  
+@app.route('/')
+def hello_world():
+    return render_template('hello.html')
 
 @app.route('/tawarano/')
 def meteo():
@@ -26,20 +30,10 @@ def meteo():
 @app.route("/rapport/")
 def mongraphique():
     return render_template("graphique.html")
-
+  
 @app.route("/histogramme/")
 def mongraphique2():
     return render_template("histogramme.html")
-
-@app.route('/extract-minutes/<date_string>')
-def extract_minutes(date_string):
-        date_object = datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%SZ')
-        minutes = date_object.minute
-        return jsonify({'minutes': minutes})
-
-@app.route('/')
-def hello_world():
-    return render_template('hello.html')
-
-if __name == "__main":
+  
+if __name__ == "__main__":
   app.run(debug=True)
